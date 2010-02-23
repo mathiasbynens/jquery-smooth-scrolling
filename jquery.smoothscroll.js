@@ -16,7 +16,7 @@
   // Inside the .click() block, `this` references the `A` element object instead of the selected parent element, so let’s store it inside a var
   $elem = $(this);
   // Look for links to anchors (on any page)
-  $(this).find('a[href*=#]').click(function() {
+  $elem.find('a[href*=#]').click(function() {
    // If it’s a link to an anchor in the same document
    if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
     // Get the in-document element the link points to…
