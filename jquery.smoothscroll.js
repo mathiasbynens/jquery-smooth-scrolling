@@ -1,5 +1,5 @@
 /*!
- * Smooth Scrolling jQuery Plugin
+ * Smooth Scrolling jQuery Plugin v1.0
  * @link http://github.com/mathiasbynens/Smooth-Scrolling-jQuery-Plugin
  * @author Mathias Bynens <http://mathiasbynens.be/>
  */
@@ -22,7 +22,7 @@
     // …and if it exists…
     if ($hash.length) {
      // …smoothly scroll to it
-     $('html').animate({ scrollTop: $hash.offset().top }, config.speed);
+     $('html, body').animate({ scrollTop: $hash.offset().top }, config.speed);
      // Don’t jump to the link right away
      return false;
     };
