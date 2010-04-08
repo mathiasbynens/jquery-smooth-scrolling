@@ -2,7 +2,7 @@
 
 ## Demo & Examples
 
-[http://mathiasbynens.be/examples/smooth-scrolling](http://mathiasbynens.be/examples/smooth-scrolling)
+[http://mathiasbynens.be/demo/smooth-scrolling](http://mathiasbynens.be/demo/smooth-scrolling)
 
 ## Example Usage
 
