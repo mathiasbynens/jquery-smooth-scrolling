@@ -1,5 +1,5 @@
 /*!
- * Smooth Scrolling jQuery Plugin v1.1
+ * Smooth Scrolling jQuery Plugin v1.2
  * @link http://github.com/mathiasbynens/Smooth-Scrolling-jQuery-Plugin
  * @author Mathias Bynens <http://mathiasbynens.be/>
  */
@@ -14,7 +14,8 @@
    $.extend(config, settings);
   };
   // Look for links to anchors (on any page)
-  $(this).find('a[href*=#]').click(function(event) {
+  this.find('a[href*=#]').click(function(event) {
+   var $scrollElement = $.browser.opera ? $('html') : $('html, body');
    // Don’t jump to the link right away
    event.preventDefault();
    // If it’s a link to an anchor in the same document
@@ -24,7 +25,7 @@
     // …and if it exists…
     if ($hash.length) {
      // …smoothly scroll to it
-     $('html, body').animate({ scrollTop: $hash.offset().top }, config.speed, function() {
+     $scrollElement.animate({ scrollTop: $hash.offset().top }, config.speed, function() {
       location.hash = $hash.attr('id');
      });
     };
