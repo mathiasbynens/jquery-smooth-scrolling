@@ -4,15 +4,10 @@
  * @author Mathias Bynens <http://mathiasbynens.be/>
  */
 ;(function($) {
- $.fn.smoothScroll = function(settings) {
-  // Specify default settings
-  var config = {
+ $.fn.smoothScroll = function(options) {
+  $.extend({
    speed: 400 // 'normal'
-  };
-  // Use custom settings, if any
-  if (settings) {
-   $.extend(config, settings);
-  };
+  }, options);
   // Look for links to anchors (on any page)
   this.find('a[href*=#]').click(function(event) {
    var $scrollElement = $.browser.opera ? $('html') : $('html, body');
@@ -25,7 +20,7 @@
     // …and if it exists…
     if ($hash.length) {
      // …smoothly scroll to it
-     $scrollElement.animate({ scrollTop: $hash.offset().top }, config.speed, function() {
+     $scrollElement.animate({ scrollTop: $hash.offset().top }, options.speed, function() {
       location.hash = $hash.attr('id');
      });
     };
