@@ -18,8 +18,8 @@ Find all links to anchors in the same document inside `#content`, and make them 
 
     $('#content').smoothScroll();
 
-### Specifying parameters
+### Specifying animation speed
 
-    $('html').smoothScroll({ speed: 300 });
+    $('html').smoothScroll(300);
 
 _– [Mathias](http://mathiasbynens.be/)_
