@@ -1,5 +1,5 @@
 /*! http://mths.be/smoothscroll v1.5.0 by @mathias */
-;(function($) {
+;(function(document, $) {
 
 	var $scrollElement = (function() {
 	    // Find out what to scroll (html or body)
@@ -10,7 +10,7 @@
 	    		return $html;
 	    	} else {
 	    		bodyScrollTop = $body.scrollTop();
-	    		// If scrolling the body doesn't do anything
+	    		// If scrolling the body doesn’t do anything
 	    		if ($body.scrollTop(bodyScrollTop + 1).scrollTop() == bodyScrollTop) {
 	    			return $html;
 	    		} else {
@@ -40,4 +40,4 @@
 		}).end();
 	};
 
-}(jQuery));
+}(document, jQuery));
