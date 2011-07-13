@@ -1,10 +1,25 @@
-/*!
-* Smooth Scrolling jQuery Plugin v1.4.1
-* @link http://github.com/mathiasbynens/Smooth-Scrolling-jQuery-Plugin
-* @author Mathias Bynens <http://mathiasbynens.be/>
-*/
+/*! http://mths.be/smoothscroll v1.5.0 by @mathias */
 ;(function($) {
-	var $scrollElement = $($.browser.opera ? 'html' : 'body');
+
+	var $scrollElement = (function() {
+	    // Find out what to scroll (html or body)
+	    	var $html = $(document.documentElement),
+	    	    $body = $(document.body),
+	    	    bodyScrollTop;
+	    	if ($html.scrollTop()) {
+	    		return $html;
+	    	} else {
+	    		bodyScrollTop = $body.scrollTop();
+	    		// If scrolling the body doesn't do anything
+	    		if ($body.scrollTop(bodyScrollTop + 1).scrollTop() == bodyScrollTop) {
+	    			return $html;
+	    		} else {
+	    			// We actually scrolled, so undo it
+	    			return $body.scrollTop(bodyScrollTop);
+	    		}
+	    	}
+	    }());
+
 	$.fn.smoothScroll = function(speed) {
 		speed = ~~speed || 400;
 		// Look for links to anchors (on any page)
@@ -24,4 +39,5 @@
 			}
 		}).end();
 	};
+
 }(jQuery));
