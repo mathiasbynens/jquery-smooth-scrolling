@@ -1,4 +1,4 @@
-/*! http://mths.be/smoothscroll v1.5.1 by @mathias */
+/*! http://mths.be/smoothscroll v1.5.2 by @mathias */
 ;(function(document, $) {
 
 	var $scrollElement = (function() {
@@ -34,7 +34,7 @@
 					event.preventDefault();
 					// …and smoothly scroll to it
 					$scrollElement.stop().animate({ 'scrollTop': $hash.offset().top }, speed, function() {
-						location.hash = hash.id;
+						location.hash = hash;
 					});
 				}
 			}
