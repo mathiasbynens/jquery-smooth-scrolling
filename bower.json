@@ -1,0 +1,12 @@
+{
+	"name": "mathiasbynens/jquery-smooth-scrolling",
+	"version": "1.5.2",
+	"main": "jquery.smoothscroll.js",
+	"description": "Smooth scrolling jQuery plugin",
+	"ignore": [
+		".*"
+	],
+	"dependencies": {
+		"jquery": "*"
+	}
+}
