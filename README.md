@@ -1,8 +1,12 @@
 # Smooth Scrolling jQuery Plugin
 
+## Notice
+
+Nowadays you should really use `scroll-behavior: smooth;` in CSS instead of a JavaScript solution.
+
 ## Demo & Examples
 
-[http://mathiasbynens.be/demo/smooth-scrolling](http://mathiasbynens.be/demo/smooth-scrolling)
+<https://mathiasbynens.be/demo/smooth-scrolling>
 
 ## Example Usage
 
